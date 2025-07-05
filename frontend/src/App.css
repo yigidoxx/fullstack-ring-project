@@ -1,0 +1,106 @@
+/* Genel Kapsayıcı */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* Başlık */
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Swiper Kartları */
+.swiper-slide > div {
+  background-color: #2a2a2a;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 430px;
+}
+
+/* Ürün Görselleri */
+.swiper-slide img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+
+/* Ürün Adı */
+.swiper-slide h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Fiyat */
+.swiper-slide p.price {
+  color: #f8c291;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+/* Popülarite */
+.popularity {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.popularity .stars {
+  display: flex;
+  gap: 2px;
+}
+
+/* Renk Seçici */
+.color-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.color-options button {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid #666;
+  cursor: pointer;
+  outline: none;
+}
+
+.color-options button.selected {
+  border: 2px solid white;
+}
+
+/* Swiper Scrollbar (Alt Kısımda ve Modern) */
+.swiper-scrollbar {
+  background: #444;
+  border-radius: 10px;
+  height: 6px;
+  margin-top: 20px;
+}
+
+.swiper-scrollbar-drag {
+  background: #aaa;
+  border-radius: 10px;
+}
+
+/* Responsive düzeltmeler */
+@media (max-width: 640px) {
+  #root {
+    padding: 1rem;
+  }
+}
