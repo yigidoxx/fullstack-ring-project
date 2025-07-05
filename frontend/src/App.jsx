@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div style={{
-      padding: '1rem',
+      padding: '2rem',
       fontFamily: 'Arial, sans-serif',
       maxWidth: '1280px',
       margin: '0 auto',
@@ -62,7 +62,7 @@ function App() {
 
       <Swiper
         modules={[Navigation, Scrollbar]}
-        spaceBetween={16}
+        spaceBetween={24}
         slidesPerView={1}
         navigation
         scrollbar={{ draggable: true }}
@@ -87,9 +87,8 @@ function App() {
                   flexDirection: 'column',
                   alignItems: 'center',
                   textAlign: 'center',
-                  width: '100%',
-                  maxWidth: '320px',
-                  margin: '0 auto',
+                  height: '100%',
+                  minHeight: '430px',
                 }}
               >
                 <img
