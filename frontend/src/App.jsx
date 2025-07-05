@@ -13,7 +13,7 @@ function App() {
   const [selectedColors, setSelectedColors] = useState({});
 
   useEffect(() => {
-    fetch('http://localhost:5000/products')
+    fetch(`${import.meta.env.VITE_API_URL}/products`)
       .then(res => res.json())
       .then(data => setProducts(data))
       .catch(err => console.error('API error:', err));
@@ -71,7 +71,7 @@ function App() {
           1024: { slidesPerView: 3 },
           1280: { slidesPerView: 4 }
         }}
-        style={{ paddingBottom: '40px' }} // scroll bar yer açar
+        style={{ paddingBottom: '40px' }}
       >
         {products.map((product, index) => {
           const selectedColor = selectedColors[index] || 'yellow';
