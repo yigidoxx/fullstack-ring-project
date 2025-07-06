@@ -110,13 +110,8 @@ function App() {
       ${product.price} USD
     </p>
 
-    {/* Renk ismi önce gösterilir */}
-    <div style={{ fontSize: '0.85rem', color: '#ccc', marginBottom: '0.5rem' }}>
-      {selectedColorName}
-    </div>
-
     {/* Renk Seçenekleri */}
-    <div style={{ display: 'flex', gap: '12px', marginBottom: '1rem' }}>
+    <div style={{ display: 'flex', gap: '12px', marginBottom: '0.5rem' }}>
       {colorOptions.map(color => (
         <button
           key={color.value}
@@ -135,6 +130,11 @@ function App() {
           }}
         />
       ))}
+    </div>
+
+    {/* Seçili Renk İsmi */}
+    <div style={{ fontSize: '0.85rem', color: '#ccc', marginBottom: '0.8rem' }}>
+      {colorOptions.find(c => c.value === selectedColor)?.name + ' Gold'}
     </div>
 
     {/* Popülarite */}
