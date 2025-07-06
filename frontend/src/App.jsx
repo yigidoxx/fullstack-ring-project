@@ -137,7 +137,7 @@ function App() {
       {colorOptions.find(c => c.value === selectedColor)?.name + ' Gold'}
     </div>
 
-    {/* Popülarite */}
+    {/* */}
     <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
       <div style={{ display: 'flex', gap: '2px' }}>{renderStars(product.popularity)}</div>
       <span style={{ fontSize: '0.85rem', color: '#ccc' }}>{product.popularity}/5</span>
