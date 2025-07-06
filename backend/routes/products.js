@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
     });
 
     const goldPricePerGram = goldRes.data.price / 31.1035;
-
+// This is the required ○ DynamicPrice Calculation section
     const enriched = products.map((product) => {
       const price = (product.popularityScore + 1) * product.weight * goldPricePerGram;
       const popularityOutOfFive = +(product.popularityScore * 5).toFixed(1);
