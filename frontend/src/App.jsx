@@ -44,9 +44,9 @@ function App() {
   };
 
   const colorOptions = [
-    { name: 'Yellow', value: 'yellow', hex: '#E6CA97' },
-    { name: 'White', value: 'white', hex: '#D9D9D9' },
-    { name: 'Rose', value: 'rose', hex: '#E1A4A9' }
+    { name: 'Yellow Gold', value: 'yellow', hex: '#E6CA97' },
+    { name: 'White Gold', value: 'white', hex: '#D9D9D9' },
+    { name: 'Rose Gold', value: 'rose', hex: '#E1A4A9' }
   ];
 
   return (
@@ -75,6 +75,8 @@ function App() {
       >
         {products.map((product, index) => {
           const selectedColor = selectedColors[index] || 'yellow';
+          const selectedColorName = colorOptions.find(c => c.value === selectedColor)?.name || '';
+
           return (
             <SwiperSlide key={index}>
               <div
@@ -129,6 +131,11 @@ function App() {
                       }}
                     />
                   ))}
+                </div>
+
+                {/* Seçilen rengin adı */}
+                <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: '#ccc' }}>
+                  {selectedColorName}
                 </div>
               </div>
             </SwiperSlide>
