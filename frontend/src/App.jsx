@@ -79,66 +79,72 @@ function App() {
 
           return (
             <SwiperSlide key={index}>
-              <div
-                style={{
-                  backgroundColor: '#2a2a2a',
-                  borderRadius: '16px',
-                  padding: '1rem',
-                  boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  textAlign: 'center',
-                  height: '100%',
-                  minHeight: '430px',
-                }}
-              >
-                <img
-                  src={product.images[selectedColor]}
-                  alt={product.name}
-                  style={{
-                    width: '100%',
-                    height: '200px',
-                    objectFit: 'contain',
-                    borderRadius: '10px',
-                    marginBottom: '1rem',
-                    background: '#fff'
-                  }}
-                />
-                <h3 style={{ fontSize: '1.1rem', marginBottom: '0.25rem' }}>{product.name}</h3>
-                <p style={{ color: '#f8c291', fontWeight: 600, marginBottom: '0.3rem' }}>
-                  ${product.price} USD
-                </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                  <div style={{ display: 'flex', gap: '2px' }}>{renderStars(product.popularity)}</div>
-                  <span style={{ fontSize: '0.85rem', color: '#ccc' }}>{product.popularity}/5</span>
-                </div>
+  <div
+    style={{
+      backgroundColor: '#2a2a2a',
+      borderRadius: '16px',
+      padding: '1rem',
+      boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      textAlign: 'center',
+      height: '100%',
+      minHeight: '430px',
+    }}
+  >
+    <img
+      src={product.images[selectedColor]}
+      alt={product.name}
+      style={{
+        width: '100%',
+        height: '200px',
+        objectFit: 'contain',
+        borderRadius: '10px',
+        marginBottom: '1rem',
+        background: '#fff'
+      }}
+    />
+    <h3 style={{ fontSize: '1.1rem', marginBottom: '0.25rem' }}>{product.name}</h3>
+    <p style={{ color: '#f8c291', fontWeight: 600, marginBottom: '0.3rem' }}>
+      ${product.price} USD
+    </p>
 
-                <div style={{ display: 'flex', gap: '10px', marginTop: '1rem' }}>
-                  {colorOptions.map(color => (
-                    <button
-                      key={color.value}
-                      onClick={() => handleColorChange(index, color.value)}
-                      title={color.name}
-                      style={{
-                        width: '22px',
-                        height: '22px',
-                        borderRadius: '50%',
-                        backgroundColor: color.hex,
-                        border: selectedColor === color.value ? '2px solid white' : '1px solid #666',
-                        cursor: 'pointer',
-                        outline: 'none'
-                      }}
-                    />
-                  ))}
-                </div>
+    {/* Renk ismi önce gösterilir */}
+    <div style={{ fontSize: '0.85rem', color: '#ccc', marginBottom: '0.5rem' }}>
+      {selectedColorName}
+    </div>
 
-                {/* Seçilen rengin adı */}
-                <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: '#ccc' }}>
-                  {selectedColorName}
-                </div>
-              </div>
-            </SwiperSlide>
+    {/* Renk Seçenekleri */}
+    <div style={{ display: 'flex', gap: '12px', marginBottom: '1rem' }}>
+      {colorOptions.map(color => (
+        <button
+          key={color.value}
+          onClick={() => handleColorChange(index, color.value)}
+          title={color.name}
+          style={{
+            width: '24px',
+            height: '24px',
+            borderRadius: '50%',
+            backgroundColor: color.hex,
+            border: selectedColor === color.value
+              ? '2px solid #fff'
+              : '1px solid #999',
+            outline: 'none',
+            cursor: 'pointer',
+          }}
+        />
+      ))}
+    </div>
+
+    {/* Popülarite */}
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+      <div style={{ display: 'flex', gap: '2px' }}>{renderStars(product.popularity)}</div>
+      <span style={{ fontSize: '0.85rem', color: '#ccc' }}>{product.popularity}/5</span>
+    </div>
+  </div>
+</SwiperSlide>
+
           );
         })}
       </Swiper>
